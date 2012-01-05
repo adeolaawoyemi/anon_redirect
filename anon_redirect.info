@@ -1,0 +1,4 @@
+name = Anonymous Redirect 2
+description = Redirect Anonymous users to the login page if the page they request is not one of login/register/password reset
+core = 7.x
+dependencies[] = user

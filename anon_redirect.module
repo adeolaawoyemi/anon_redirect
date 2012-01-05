@@ -1,0 +1,13 @@
+<?php
+
+function anon_redirect2_init() {
+  // Don't let the user see content if they're not logged in
+	if (!user_is_logged_in()) {
+		if( preg_match('/^user\/?/', current_path() ) ) {
+			// echo 'PATH: ' . current_path() . "<br/>";
+			// echo "You're good to go!<br/>";
+		} else {
+			drupal_goto("user/login",array('query'=>drupal_get_destination()));
+		}
+	}
+}
